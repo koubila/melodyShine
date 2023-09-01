@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MelodyShine</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="logo-center">
+        <img class="logo" src="{{ url_for('static', filename='images/logoMelodyShine.png') }}" alt="">
+    </div>
+
+    <div class="container">
+        <div class="row m-4">
+            <div class="col-12 col col-md-6 col-lg-4 d-flex justify-content-center mb-10">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ url_for('static', filename='images/bella-ciao.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Bella Ciao</h5>
+                        <p class="card-text">Vasco Scansani</p>
+                        <div class="d-flex justify-content-end ">
+                            <form id="bella_ciao" class="scriptForm" action="/run_script" method="post">
+                                <input type="submit" value="Play">
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col col-md-6 col-lg-4 d-flex justify-content-center mb-10">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ url_for('static', filename='images/fur-elise.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Lettre à Elise</h5>
+                        <p class="card-text">Beethoven</p>
+
+                        <div class="d-flex justify-content-end ">
+                            <form id="for_elise" class="scriptForm" action="/run_script" method="post">
+                                <input type="submit" value="Play">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col col-md-6 col-lg-4 d-flex justify-content-center mb-10">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ url_for('static', filename='images/got.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">GOT</h5>
+                        <p class="card-text">Ramin Djawadi</p>
+                        <div class="d-flex justify-content-end ">
+                            <form id="got_theme" class="scriptForm" action="/run_script" method="post">
+                                <input type="submit" value="Play">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col col-md-6 col-lg-4 d-flex justify-content-center mb-10">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ url_for('static', filename='images/avengers2023.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Avengers</h5>
+                        <p class="card-text">Alan Silvestri</p>
+                        <div class="d-flex justify-content-end ">
+                            <form id="avengers_theme" class="scriptForm" action="/run_script" method="post">
+                                <input type="submit" value="Play">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col col-md-6 col-lg-4 d-flex justify-content-center mb-10">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ url_for('static', filename='images/imagine-dragon.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Believer</h5>
+                        <p class="card-text">Imagine Dragons</p>
+                        <div class="d-flex justify-content-end ">
+                            <form id="Believer_Imagine_Dragons" class="scriptForm" action="/run_script" method="post">
+                                <input type="submit" value="Play">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col col-md-6 col-lg-4 d-flex justify-content-center mb-10">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ url_for('static', filename='images/minecraft.png') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Minecraft</h5>
+                        <p class="card-text">Daniel Rosenfeld</p>
+                        <div class="d-flex justify-content-end ">
+                            <form id="minecraft" class="scriptForm" action="/run_script" method="post">
+                                <input type="submit" value="Play">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            // Add JavaScript function to handle form submissions
+            document.querySelectorAll('.scriptForm').forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    // Prevent the default form submission
+                    event.preventDefault();
+                    // Get the ID attribute value of the form
+                    var formId = form.id;
+
+                    // Add the value as a hidden input to the form
+                    var hiddenInput = document.createElement('input');
+                    hiddenInput.type = 'hidden';
+                    hiddenInput.name = 'form_id';
+                    hiddenInput.value = formId;
+                    this.appendChild(hiddenInput);
+
+                    // Submit the form programmatically
+                    this.submit();
+                });
+            });
+
+        </script>
+
+</body>
+
+</html>

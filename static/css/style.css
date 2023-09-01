@@ -1,0 +1,53 @@
+.logo-center{
+    display: flex;
+    justify-content: center;  
+}
+
+body{
+  font-family: 'Nunito', sans-serif;
+  background-color: black;
+  color: var(--clr-neon);
+}
+
+.logo{
+    width: 20%;
+    height: 20% ;
+}
+
+
+.line-music{
+    display: flex;
+    justify-content: space-around;
+}
+
+   
+ :root {
+    --clr-neon: hsl(222, 79%, 48%);
+    --clr-bg: hsl(323 21% 16%);
+ }
+  
+.neon-button{
+  font-size: 4rem;
+  color: var(--clr-neon);
+  cursor: pointer;
+  text-decoration: none;
+  border: currentColor 1px solid;
+  border-radius: 0.30em;
+  
+}
+.container-neon {
+  padding-left: 100px;
+ }
+  
+
+.card{
+  background-color: rgb(26, 25, 25);
+}
+
+.card-title{
+  color: aliceblue;
+}
+
+.card-text{
+  color: aliceblue;
+}
